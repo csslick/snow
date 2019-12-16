@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>snow</title>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.snowfall.js"></script>
+	<style>
+
+		*{
+			box-sizing: border-box;
+			margin: 0; padding: 0;
+		}
+		html,
+		body {
+			height: 100%;
+		}
+
+		body {
+			text-align: center;
+			background: #333;
+			color: white;
+			height: 100%;
+		}
+
+		.flurry-container {
+			background: #666;
+		}
+
+		.bg{
+			position: relative;
+			height: 100%;
+		}
+		.bg > .tree{
+			height: 65%;
+			background: #c54245;
+			background-image: url("images/tree1.png"), url("images/tree2.png");
+			background-size: 100%;
+			background-repeat: repeat-x;
+			background-position: 0 bottom, 100px bottom;
+			animation-name: tree1, tree2;
+			animation-duration: 40s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-delay: 0, 1s;
+		}
+
+		@keyframes tree1 {
+			from {
+				background-color: #c54245;
+				background-position: 0px bottom;
+			}
+			to {
+				background-color: #0F8A5F;
+				background-position: 1406px bottom;
+			}
+		}
+
+		@keyframes tree2 {
+			from {
+				background-color: #c54245;
+				background-position: 0px bottom;
+			}
+			to {
+				background-color: #0F8A5F;
+				background-position: 1406px bottom;
+			}
+		}
+
+		.bg > .ground{
+			position: absolute;
+			left: 0; bottom: 0; 
+			width: 100%;
+			height: 35%;
+			background: linear-gradient(0deg, #666, #fff 80%);
+			z-index: -1;
+		}
+
+		.bg h1{ 
+			position: absolute;
+			width: 100%;
+			font-size: 64px;
+			left: 0;
+			top: calc(50% - 64px);
+			text-align: center;
+			color: red;
+			/* border: 1px solid red; */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg">
+		<div class="tree"></div>
+		<div class="ground">
+			<h1>Merry Christmas</h1>
+		</div>
+	</div>
+
+	<script>
+
+		$.snowfall.start({
+			content: '\u2744',
+			size: {
+				min: 10,
+				max: 50
+			}
+		});	
+	</script>
+
+</body>
+
+</html>
